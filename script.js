@@ -668,7 +668,7 @@ function initUtilityListeners() {
   const copyEmailBtn = document.querySelector('.copy-email-btn');
   copyEmailBtn?.addEventListener('click', (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText('udit.singh@example.com').then(() => {
+    navigator.clipboard.writeText('uditpratpsingh014@gmail.com').then(() => {
       showToast('Email address copied to clipboard!', 'success');
     });
   });
