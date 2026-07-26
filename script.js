@@ -607,7 +607,7 @@ function initContactForm() {
       submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...`;
 
       setTimeout(() => {
-        showToast('Message sent successfully! Alex will get back to you shortly.', 'success');
+        showToast('Message sent successfully! Udit will get back to you shortly.', 'success');
         form.reset();
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
@@ -668,7 +668,7 @@ function initUtilityListeners() {
   const copyEmailBtn = document.querySelector('.copy-email-btn');
   copyEmailBtn?.addEventListener('click', (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText('alex.dev@example.com').then(() => {
+    navigator.clipboard.writeText('udit.singh@example.com').then(() => {
       showToast('Email address copied to clipboard!', 'success');
     });
   });
