@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional & Animated Portfolio of Alex Dev - Full-Stack Developer & AI Specialist crafting next-gen web applications and digital experiences.">
+  <meta name="keywords" content="Portfolio, Full-Stack Developer, Web Developer, AI Engineer, React, Node.js, JavaScript, Python, Web Design">
+  <meta name="author" content="Alex Dev">
+
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="Alex Dev | Animated Full-Stack Developer Portfolio">
+  <meta property="og:description" content="Explore my latest projects, technical skills, interactive demos, and full-stack capabilities.">
+  <meta property="og:type" content="website">
+
+  <title>Alex Dev | Full-Stack & AI Web Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Animated Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Glowing Radial Background Gradients -->
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+  <div class="glow-sphere glow-3"></div>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-code">&lt;/&gt;</span>
+        <span class="brand-name">Alex<span class="text-accent">.dev</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a>
+        <a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a>
+        <a href="#certificates" class="nav-link"><i class="fa-solid fa-award"></i> Credentials</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Accent Color Theme Picker Toggle -->
+        <div class="accent-picker-wrapper">
+          <button class="icon-btn" id="accent-toggle-btn" title="Customize Accent Color" aria-label="Customize Accent Color">
+            <i class="fa-solid fa-palette"></i>
+          </button>
+          <div class="accent-dropdown" id="accent-dropdown">
+            <span class="dropdown-title">Choose Accent Theme</span>
+            <div class="accent-options">
+              <button class="accent-opt active" data-color="cyan" style="background: #00f2fe;" title="Cyber Cyan"></button>
+              <button class="accent-opt" data-color="purple" style="background: #9d4edd;" title="Neon Purple"></button>
+              <button class="accent-opt" data-color="emerald" style="background: #10b981;" title="Emerald Green"></button>
+              <button class="accent-opt" data-color="crimson" style="background: #ff2a5f;" title="Crimson Red"></button>
+              <button class="accent-opt" data-color="gold" style="background: #f59e0b;" title="Amber Gold"></button>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-sm btn-primary hide-mobile">
+          <span>Hire Me</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <!-- Hamburger Toggle for Mobile -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="status-badge fade-in">
+            <span class="status-dot"></span>
+            <span>Available for Freelance & Full-time Roles</span>
+          </div>
+
+          <h1 class="hero-title fade-in delay-1">
+            Hi, I'm <span class="text-accent highlight-text">Alex Dev</span>
+            <br>
+            <span class="typing-container">
+              <span id="typing-text"></span><span class="cursor">&nbsp;</span>
+            </span>
+          </h1>
+
+          <p class="hero-description fade-in delay-2">
+            Passionate Full-Stack Software Engineer specializing in crafting high-performance, visually captivating, and scalable web applications powered by modern JavaScript/TypeScript, React, Python, and AI services.
+          </p>
+
+          <div class="hero-cta fade-in delay-3">
+            <a href="#projects" class="btn btn-primary btn-glow">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Explore Projects</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-solid fa-comments"></i>
+              <span>Get in Touch</span>
+            </a>
+            <button class="btn btn-ghost" id="download-cv-btn">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Download CV</span>
+            </button>
+          </div>
+
+          <!-- Hero Quick Stats -->
+          <div class="hero-stats fade-in delay-4">
+            <div class="stat-card">
+              <div class="stat-num" data-target="15">0</div>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <div class="stat-num" data-target="3">0</div>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <div class="stat-num" data-target="100">0</div>
+              <span class="stat-label">% Satisfaction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-in delay-2">
+          <div class="avatar-card glass-card">
+            <div class="avatar-inner">
+              <div class="avatar-glow"></div>
+              <div class="avatar-frame">
+                <!-- High tech SVG Avatar Graphic -->
+                <svg class="avatar-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="100" r="90" stroke="var(--accent-color)" stroke-width="3" stroke-dasharray="8 6" opacity="0.6"/>
+                  <circle cx="100" cy="100" r="75" fill="var(--bg-card)"/>
+                  <circle cx="100" cy="75" r="32" fill="var(--accent-color)" opacity="0.85"/>
+                  <path d="M40 160C40 126.863 66.8629 100 100 100C133.137 100 160 126.863 160 160" fill="var(--accent-color)" opacity="0.6"/>
+                </svg>
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="floating-badge badge-1" title="React.js">
+                <i class="fa-brands fa-react" style="color: #61dafb;"></i>
+              </div>
+              <div class="floating-badge badge-2" title="Node.js">
+                <i class="fa-brands fa-node-js" style="color: #68a063;"></i>
+              </div>
+              <div class="floating-badge badge-3" title="Python & AI">
+                <i class="fa-brands fa-python" style="color: #4584b6;"></i>
+              </div>
+              <div class="floating-badge badge-4" title="JavaScript / TS">
+                <i class="fa-brands fa-js" style="color: #f7df1e;"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-down-hint" aria-label="Scroll to About Section">
+        <span class="mouse-icon">
+          <span class="wheel"></span>
+        </span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="section-subtitle">&lt; WHO I AM &gt;</span>
+          <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-card fade-in">
+            <div class="about-tabs">
+              <button class="tab-btn active" data-tab="tab-bio"><i class="fa-solid fa-user-gear"></i> Biography</button>
+              <button class="tab-btn" data-tab="tab-philosophy"><i class="fa-solid fa-lightbulb"></i> Philosophy</button>
+              <button class="tab-btn" data-tab="tab-interests"><i class="fa-solid fa-heart"></i> Interests</button>
+            </div>
+
+            <div class="tab-content active" id="tab-bio">
+              <h3>Creating Digital Products That Matter</h3>
+              <p>
+                I am a dedicated Full-Stack Developer with a relentless drive for innovation. I combine modern aesthetic design with clean, scalable code architecture. My journey started with a curiosity for how web platforms process millions of interactions seamlessly.
+              </p>
+              <p>
+                Today, I engineer full-stack web platforms, custom AI integrations, interactive dashboards, and responsive web clients that deliver exceptional user experiences.
+              </p>
+              
+              <div class="bio-details">
+                <div class="detail-item">
+                  <span class="detail-key"><i class="fa-solid fa-user-check text-accent"></i> Name:</span>
+                  <span class="detail-val">Alex Dev</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-key"><i class="fa-solid fa-envelope text-accent"></i> Email:</span>
+                  <span class="detail-val">alex.dev@example.com</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-key"><i class="fa-solid fa-location-dot text-accent"></i> Location:</span>
+                  <span class="detail-val">Global / Remote</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-key"><i class="fa-solid fa-globe text-accent"></i> Languages:</span>
+                  <span class="detail-val">English, Spanish</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="tab-philosophy">
+              <h3>Engineering Mindset & Core Values</h3>
+              <p>
+                I believe that code is an art form. Writing maintainable, performant, and self-documenting code is as important as achieving visual brilliance.
+              </p>
+              <ul class="values-list">
+                <li><i class="fa-solid fa-circle-check text-accent"></i> <strong>User-Centric Design:</strong> Interfaces should feel intuitive, dynamic, and effortless to navigate.</li>
+                <li><i class="fa-solid fa-circle-check text-accent"></i> <strong>Performance First:</strong> Optimized asset loading, 60fps animations, and snappy UI responses.</li>
+                <li><i class="fa-solid fa-circle-check text-accent"></i> <strong>Continuous Growth:</strong> Rapid adaptation to emerging tech stacks including Generative AI and Web3.</li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="tab-interests">
+              <h3>Hobbies & Creative Pursuits</h3>
+              <p>When I'm not writing code or debugging backend APIs, you'll find me exploring creative tech domains:</p>
+              <div class="interests-grid">
+                <span class="interest-tag"><i class="fa-solid fa-brain"></i> AI Research</span>
+                <span class="interest-tag"><i class="fa-solid fa-gamepad"></i> Game Dev</span>
+                <span class="interest-tag"><i class="fa-solid fa-camera"></i> Photography</span>
+                <span class="interest-tag"><i class="fa-solid fa-music"></i> Audio Synthesizers</span>
+                <span class="interest-tag"><i class="fa-solid fa-plane"></i> Traveling</span>
+                <span class="interest-tag"><i class="fa-solid fa-book"></i> Sci-Fi Literature</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlights-container fade-in delay-1">
+            <div class="highlight-card glass-card tilt-element">
+              <div class="highlight-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <h4>Full-Stack Mastery</h4>
+              <p>Seamless integration between reactive frontend frameworks and resilient backend microservices.</p>
+            </div>
+
+            <div class="highlight-card glass-card tilt-element">
+              <div class="highlight-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <h4>Rich UI & Animations</h4>
+              <p>Crafting micro-interactions, smooth canvas visual effects, and fluid CSS 3D transitions.</p>
+            </div>
+
+            <div class="highlight-card glass-card tilt-element">
+              <div class="highlight-icon"><i class="fa-solid fa-robot"></i></div>
+              <h4>AI Tools & Automation</h4>
+              <p>Integrating LLMs, prompt engineering pipelines, and intelligent API endpoints into web apps.</p>
+            </div>
+
+            <div class="highlight-card glass-card tilt-element">
+              <div class="highlight-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>Clean & Secure Code</h4>
+              <p>Adhering to SOLID principles, rigorous validation, SEO standards, and security best practices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section id="skills" class="section-padding bg-alt">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="section-subtitle">&lt; MY TECH STACK &gt;</span>
+          <h2 class="section-title">Technical <span class="text-accent">Expertise</span></h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="skills-filter fade-in">
+          <button class="filter-btn active" data-filter="all">All Tech</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend & DB</button>
+          <button class="filter-btn" data-filter="ai-cloud">AI & Cloud</button>
+          <button class="filter-btn" data-filter="tools">Dev Tools</button>
+        </div>
+
+        <div class="skills-grid fade-in delay-1" id="skills-grid">
+          <!-- Frontend Skills -->
+          <div class="skill-card glass-card tilt-element" data-category="frontend">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-react" style="color: #61dafb;"></i></div>
+              <div class="skill-info">
+                <h4>React.js / Next.js</h4>
+                <span class="skill-level">Advanced • 92%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card tilt-element" data-category="frontend">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-js" style="color: #f7df1e;"></i></div>
+              <div class="skill-info">
+                <h4>JavaScript / TypeScript</h4>
+                <span class="skill-level">Mastery • 95%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card tilt-element" data-category="frontend">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-css3-alt" style="color: #38bdf8;"></i></div>
+              <div class="skill-info">
+                <h4>HTML5 / Modern CSS3</h4>
+                <span class="skill-level">Mastery • 96%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 96%;"></div>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="skill-card glass-card tilt-element" data-category="backend">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-node-js" style="color: #68a063;"></i></div>
+              <div class="skill-info">
+                <h4>Node.js / Express</h4>
+                <span class="skill-level">Advanced • 90%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 90%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card tilt-element" data-category="backend">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-python" style="color: #3776ab;"></i></div>
+              <div class="skill-info">
+                <h4>Python / FastAPI</h4>
+                <span class="skill-level">Proficient • 88%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card tilt-element" data-category="backend">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-solid fa-database" style="color: #47a248;"></i></div>
+              <div class="skill-info">
+                <h4>MongoDB & PostgreSQL</h4>
+                <span class="skill-level">Proficient • 85%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+
+          <!-- AI & Cloud -->
+          <div class="skill-card glass-card tilt-element" data-category="ai-cloud">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-solid fa-brain" style="color: #a855f7;"></i></div>
+              <div class="skill-info">
+                <h4>OpenAI / Gemini APIs</h4>
+                <span class="skill-level">Advanced • 89%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 89%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card tilt-element" data-category="ai-cloud">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-aws" style="color: #ff9900;"></i></div>
+              <div class="skill-info">
+                <h4>AWS & Docker</h4>
+                <span class="skill-level">Proficient • 82%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 82%;"></div>
+            </div>
+          </div>
+
+          <!-- Dev Tools -->
+          <div class="skill-card glass-card tilt-element" data-category="tools">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-git-alt" style="color: #f05032;"></i></div>
+              <div class="skill-info">
+                <h4>Git & GitHub CI/CD</h4>
+                <span class="skill-level">Advanced • 93%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 93%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-card tilt-element" data-category="tools">
+            <div class="skill-head">
+              <div class="skill-icon"><i class="fa-brands fa-figma" style="color: #f24e1e;"></i></div>
+              <div class="skill-info">
+                <h4>Figma UI/UX Design</h4>
+                <span class="skill-level">Proficient • 86%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 86%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SHOWCASE SECTION -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="section-subtitle">&lt; PORTFOLIO WORKS &gt;</span>
+          <h2 class="section-title">Featured <span class="text-accent">Projects</span></h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <!-- Project Categories Filter -->
+        <div class="projects-filter fade-in">
+          <button class="proj-filter-btn active" data-proj-filter="all">All Projects</button>
+          <button class="proj-filter-btn" data-proj-filter="fullstack">Full-Stack</button>
+          <button class="proj-filter-btn" data-proj-filter="ai">AI Tools</button>
+          <button class="proj-filter-btn" data-proj-filter="web">Web Apps</button>
+        </div>
+
+        <div class="projects-grid fade-in delay-1">
+          <!-- Project Card 1 -->
+          <div class="project-card glass-card tilt-element" data-category="fullstack ai">
+            <div class="project-img-wrapper">
+              <div class="project-preview-mockup mockup-1">
+                <div class="mockup-header">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="mockup-title">nexus-ai-workspace.app</span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fa-solid fa-microchip preview-icon text-accent"></i>
+                  <span>NexusAI Workspace</span>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary quick-view-btn" data-proj="proj-1">
+                  <i class="fa-solid fa-eye"></i> Quick View
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">MongoDB</span>
+              </div>
+              <h3 class="project-title">NexusAI - Next-Gen AI Workspace</h3>
+              <p class="project-summary">An intelligent SaaS dashboard integrating generative LLMs, automated code generation, and multi-modal file processing.</p>
+              <div class="project-links">
+                <a href="#" class="proj-link demo-link"><i class="fa-solid fa-external-link"></i> Live Demo</a>
+                <a href="#" class="proj-link github-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="project-card glass-card tilt-element" data-category="web">
+            <div class="project-img-wrapper">
+              <div class="project-preview-mockup mockup-2">
+                <div class="mockup-header">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="mockup-title">aurastore-3d.com</span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fa-solid fa-cube preview-icon text-accent"></i>
+                  <span>AuraStore 3D</span>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary quick-view-btn" data-proj="proj-2">
+                  <i class="fa-solid fa-eye"></i> Quick View
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Three.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">Stripe</span>
+              </div>
+              <h3 class="project-title">AuraStore - 3D E-Commerce Platform</h3>
+              <p class="project-summary">High-end luxury e-commerce experience featuring interactive 3D product customization, cart management, and payment checkout.</p>
+              <div class="project-links">
+                <a href="#" class="proj-link demo-link"><i class="fa-solid fa-external-link"></i> Live Demo</a>
+                <a href="#" class="proj-link github-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="project-card glass-card tilt-element" data-category="fullstack">
+            <div class="project-img-wrapper">
+              <div class="project-preview-mockup mockup-3">
+                <div class="mockup-header">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="mockup-title">devpulse-analytics.io</span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fa-solid fa-chart-line preview-icon text-accent"></i>
+                  <span>DevPulse Dashboard</span>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary quick-view-btn" data-proj="proj-3">
+                  <i class="fa-solid fa-eye"></i> Quick View
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Express</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Chart.js</span>
+              </div>
+              <h3 class="project-title">DevPulse - Telemetry & Performance Hub</h3>
+              <p class="project-summary">Real-time developer analytics platform tracking code velocity, deployment pipelines, and server health telemetry.</p>
+              <div class="project-links">
+                <a href="#" class="proj-link demo-link"><i class="fa-solid fa-external-link"></i> Live Demo</a>
+                <a href="#" class="proj-link github-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4 -->
+          <div class="project-card glass-card tilt-element" data-category="ai web">
+            <div class="project-img-wrapper">
+              <div class="project-preview-mockup mockup-4">
+                <div class="mockup-header">
+                  <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                  <span class="mockup-title">inamigos-portal.org</span>
+                </div>
+                <div class="mockup-body">
+                  <i class="fa-solid fa-hand-holding-heart preview-icon text-accent"></i>
+                  <span>InAmigos Portal</span>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary quick-view-btn" data-proj="proj-4">
+                  <i class="fa-solid fa-eye"></i> Quick View
+                </button>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <h3 class="project-title">InAmigos Foundation Web Platform</h3>
+              <p class="project-summary">A non-profit community portal built for volunteer registration, event showcases, and social campaign awareness.</p>
+              <div class="project-links">
+                <a href="#" class="proj-link demo-link"><i class="fa-solid fa-external-link"></i> Live Demo</a>
+                <a href="#" class="proj-link github-link"><i class="fa-brands fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION SECTION -->
+    <section id="experience" class="section-padding bg-alt">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="section-subtitle">&lt; CAREER PATH &gt;</span>
+          <h2 class="section-title">Experience & <span class="text-accent">Education</span></h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="timeline-container fade-in">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date"><i class="fa-solid fa-calendar-days text-accent"></i> 2024 - Present</span>
+              <h3>Senior Full-Stack Engineer</h3>
+              <span class="timeline-company">TechSphere Innovations Inc.</span>
+              <p>Leading frontend architecture and Node.js microservices for high-traffic SaaS products. Optimized page load speeds by 45% and mentored junior developers.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date"><i class="fa-solid fa-calendar-days text-accent"></i> 2022 - 2024</span>
+              <h3>AI & Web Developer</h3>
+              <span class="timeline-company">Nexus Digital Labs</span>
+              <p>Developed custom AI chat assistants, automated web workflows, and responsive client dashboards using React, Python FastAPI, and OpenAI API services.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="timeline-date"><i class="fa-solid fa-calendar-days text-accent"></i> 2019 - 2023</span>
+              <h3>B.Tech in Computer Science & Engineering</h3>
+              <span class="timeline-company">Institute of Technology & Science</span>
+              <p>Graduated with First Class Honors (GPA: 3.9/4.0). Specialized in Data Structures, Algorithms, Software Engineering, and Artificial Intelligence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS & CERTIFICATES SECTION -->
+    <section id="certificates" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="section-subtitle">&lt; VERIFIED SKILLS &gt;</span>
+          <h2 class="section-title">Certificates & <span class="text-accent">Achievements</span></h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="cert-grid fade-in delay-1">
+          <div class="cert-card glass-card tilt-element">
+            <div class="cert-badge-icon"><i class="fa-brands fa-aws text-accent"></i></div>
+            <div class="cert-info">
+              <h4>AWS Certified Solutions Architect</h4>
+              <p>Amazon Web Services • 2024</p>
+              <span class="cert-tag">Cloud Architecture</span>
+            </div>
+          </div>
+
+          <div class="cert-card glass-card tilt-element">
+            <div class="cert-badge-icon"><i class="fa-brands fa-google text-accent"></i></div>
+            <div class="cert-info">
+              <h4>Google Cloud Professional ML Engineer</h4>
+              <p>Google Cloud • 2023</p>
+              <span class="cert-tag">Machine Learning</span>
+            </div>
+          </div>
+
+          <div class="cert-card glass-card tilt-element">
+            <div class="cert-badge-icon"><i class="fa-brands fa-meta text-accent"></i></div>
+            <div class="cert-info">
+              <h4>Meta Front-End Developer Professional</h4>
+              <p>Meta • 2023</p>
+              <span class="cert-tag">React & UI</span>
+            </div>
+          </div>
+
+          <div class="cert-card glass-card tilt-element">
+            <div class="cert-badge-icon"><i class="fa-solid fa-trophy text-accent"></i></div>
+            <div class="cert-info">
+              <h4>1st Place - Global AI Hackathon</h4>
+              <p>InAmigos & TechAlliance • 2024</p>
+              <span class="cert-tag">Award Winner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding bg-alt">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="section-subtitle">&lt; LET'S CONNECT &gt;</span>
+          <h2 class="section-title">Get In <span class="text-accent">Touch</span></h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- Contact Info Column -->
+          <div class="contact-info-col fade-in">
+            <div class="contact-card glass-card">
+              <h3>Let's discuss your next project!</h3>
+              <p>I'm always open to discussing new web development projects, creative ideas, or opportunities to be part of your vision.</p>
+
+              <div class="contact-methods">
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="contact-text">
+                    <span>Email Me</span>
+                    <a href="mailto:alex.dev@example.com" class="copy-email-btn">alex.dev@example.com</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                  <div class="contact-text">
+                    <span>Location</span>
+                    <p>San Francisco, CA / Remote Worldwide</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                  <div class="contact-text">
+                    <span>Working Hours</span>
+                    <p>Mon - Fri: 09:00 AM - 06:00 PM UTC</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-links-box">
+                <span>Follow & Connect:</span>
+                <div class="social-icons">
+                  <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="mailto:alex.dev@example.com" aria-label="Direct Email"><i class="fa-solid fa-paper-plane"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-col fade-in delay-1">
+            <form id="contact-form" class="contact-form glass-card" novalidate>
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-user input-icon"></i>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <span class="error-msg" id="name-error">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email *</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-envelope input-icon"></i>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-tag input-icon"></i>
+                  <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
+                </div>
+                <span class="error-msg" id="subject-error">Please specify a subject.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-comment-dots input-icon textarea-icon"></i>
+                  <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry..." required></textarea>
+                </div>
+                <span class="error-msg" id="message-error">Please enter your message (min 10 characters).</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-glow full-width">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-brand">
+          <span class="brand-code">&lt;/&gt;</span>
+          <span class="brand-name">Alex<span class="text-accent">.dev</span></span>
+        </a>
+        <p>Building high-impact digital experiences with clean code & modern AI.</p>
+      </div>
+
+      <div class="footer-copy">
+        <p>&copy; <span id="current-year"></span> Alex Dev. All rights reserved.</p>
+      </div>
+
+      <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- PROJECT QUICK VIEW MODAL -->
+  <div class="modal" id="project-modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-dialog glass-card">
+      <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Content dynamically injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
